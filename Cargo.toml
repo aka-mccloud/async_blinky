@@ -1,0 +1,17 @@
+[package]
+name = "async_blinky"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+rusty-macros = { path = "../macros", version = "=0.1.0" }
+rusty-rt = { path = "../rt", version = "=0.1.0" }
+rusty-peripheral = { path = "../peripheral", version = "=0.1.0" }
+register = { path = "../register", version = "=0.1.0" }
+
+[profile.release]
+strip = true  # Automatically strip symbols from the binary.
+opt-level = "z"  # Optimize for size.
+lto = true
